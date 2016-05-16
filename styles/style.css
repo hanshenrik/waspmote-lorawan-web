@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+section {
+  width: 800px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+section.fluid { width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Exo 2";
+  font-weight: 200;
+}
+
+hr {
+  margin: 20px 0;
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+a {
+  color: #269FD6;
+  transition: color .222s ease-in-out;
+  text-decoration: none;
+}
+a:hover { color: #1474A0; }
+
+.section-cover {
+  height: 400px;
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  align-items: center;
+}
+.section-cover h1 {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  padding: 20px;
+  font-size: 50px;
+  text-align: center;
+  flex-grow: 2;
+}
+
+#graph-cover { background-image: url(/images/measure.jpg); }
+#meta-cover { background-image: url(/images/meta.jpg); }
+#map-cover { background-image: url(/images/map.png); }
+
+#graph-container,
+#meta-chart-container { text-align: center; }
+
+.graph-wrapper,
+.meta-chart-wrapper { padding: 20px 0; }
+
+.graph {
+  width: 100% !important;
+  height: 300px;
+}
+
+.loading-placeholder { font-size: 4em; }
+
+.dygraph-legend { background-color: #f7f7f7 !important; }
