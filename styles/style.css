@@ -59,9 +59,9 @@ a:hover { color: #1474A0; }
   flex-grow: 2;
 }
 
-#graph-cover { background-image: url(/images/measure.jpg); }
-#meta-cover { background-image: url(/images/meta.jpg); }
-#map-cover { background-image: url(/images/map.png); }
+#graph-cover { background-image: url(../images/measure.jpg); }
+#meta-cover { background-image: url(../images/meta.jpg); }
+#map-cover { background-image: url(../images/map.png); }
 
 #graph-container,
 #meta-chart-container { text-align: center; }
