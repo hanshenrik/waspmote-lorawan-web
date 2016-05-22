@@ -57,6 +57,11 @@ function getHistoricalSensorData() {
           $.each(metaMap, function(l, metric) {
             var value = frame[metric];
 
+            // Filter based on gateway
+            // if (frame['gatewayEui'] === 'AA555A0008060252') {
+            //   return;
+            // }
+
             // Make values coarse enough that they makes sense in a chart
             if (metric === 'snr') {
               value = Math.round(value)
