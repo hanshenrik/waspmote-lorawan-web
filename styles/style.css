@@ -46,7 +46,7 @@ a:hover { color: #1474A0; }
 .section-cover {
   height: 400px;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   display: flex;
   align-items: center;
 }
