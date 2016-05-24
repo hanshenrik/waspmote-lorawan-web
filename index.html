@@ -9,13 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:400,200,100|Roboto" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+  <link rel="stylesheet" href="//api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="styles/style.css" />
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  <script src="//api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.0/Chart.min.js"></script>
+  <script src="js/latest-data.js"></script>
   <script src="js/historical-data.js"></script>
+  <script src="js/map.js"></script>
   <script src="js/app.js"></script>
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -29,13 +35,17 @@
     <section>
       <h2>About</h2>
       <p>
-        This is a website for a project thesis investigating whether the Low Power Wide Area Network (LPWAN) technology LoRaWAN is a good fit to monitor greenhouse gas (GHG) levels in urban areas. Below you see 1) a map representation of the LPWAN, 2) some graphs showing the GHG levels (and some other stuff) measured as part of the proof-of-concept and 3) some meta data.
+        This is a website for a project thesis investigating whether the Low Power Wide Area Network (LPWAN) technology LoRaWAN is a good fit to monitor greenhouse gas (GHG) levels in urban areas. Below you see 1) a map showing real measured GHG data from two sensors in Trondheim, 2) some graphs showing the GHG levels (and some other stuff) measured as part of the proof-of-concept and 3) some meta data.
       </p>
     </section>
 
-    <div class="fluid section-cover" id="map-cover"></div>
+    <div class="map" id="map"></div>
     <section>
-      <p>A map showing all messages sent in the network in real time has been developed. See <a href="http://dataport.item.ntnu.no">dataport.item.ntnu.no</a> for a live version of the map.</p>
+      <p>To efficiently indicate low, medium and high concentrations of certain GHG gases, coloring is used.</p>
+
+      <p>For a better overview of the network, a map showing all sensors, gateways and messages sent in real time has been developed. See <a href="http://dataport.item.ntnu.no">dataport.item.ntnu.no</a> for a live version of the network map (image below).</p>
+      
+      <img class="img-responsive" src="images/map.png" />
     </section>
 
     <div class="fluid section-cover" id="graph-cover">

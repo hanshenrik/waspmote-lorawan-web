@@ -19,7 +19,7 @@ footer {
 
 section {
   width: 800px;
-  max-width: 100%;
+  max-width: 90%;
   margin: 20px auto;
 }
 section.fluid { width: 100%; }
@@ -43,6 +43,11 @@ a {
 }
 a:hover { color: #1474A0; }
 
+.img-responsive {
+  width: 100%;
+  max-width: 100%;
+}
+
 .section-cover {
   height: 400px;
   background-size: cover;
@@ -57,6 +62,29 @@ a:hover { color: #1474A0; }
   font-size: 50px;
   text-align: center;
   flex-grow: 2;
+}
+
+#map {
+  height: 600px;
+}
+@media (max-width: 768px) {
+  #map {
+    height: 400px;
+    max-height: 70vh;
+  }
+}
+
+.leaflet-control-layers-toggle {
+  width: 26px;
+  height: 26px;
+}
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 30px;
+  height: 30px;
+  background-size: 20px 20px;
+}
+.leaflet-retina .leaflet-control-layers-toggle {
+  background-size: 18px 18px;
 }
 
 #graph-cover { background-image: url(../images/measure.jpg); }

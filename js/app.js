@@ -18,8 +18,8 @@ var devices = [
     'color': '#56A05F',
     'hightlightColor': '#59D468',
     'position': {
-      'lat': 63.418838,
-      'lon': 10.394769
+      'lat': 63.429734, // 63.418838,
+      'lon': 10.392224  // 10.394769
     },
     'sensors': {},
     'meta': {}
@@ -68,6 +68,8 @@ var graphs = {};
 var updateInterval = 30000;
 
 $(document).ready(function () {
+  drawMap();
+  getLatestSensorData();
   Chart.defaults.global.responsive = true;
   getHistoricalSensorData();
 });

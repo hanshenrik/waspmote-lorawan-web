@@ -10,13 +10,13 @@ function getHistoricalSensorData() {
     $( '#graph-container' ).append( $loadingDOMElement );
     $( '#meta-chart-container' ).append( $loadingDOMElement.clone() );
 
-    console.log(deviceID + ": GET request sent");
+    console.log('Historical data: GET request sent for ' + deviceID);
     $.get( historicalDataURL + deviceID)
       .done(function( result ) {
-        console.log(deviceID + ": Data received");
+        console.log('Historical data: Response received for ' + deviceID);
 
         if ($.isEmptyObject(result)) {
-          console.log(deviceID + ": Empty result. Skipping this device");
+          console.log('Historical data: Empty result for ' + deviceID + '. Skipping this device');
           return;
         }
 
@@ -34,7 +34,7 @@ function getHistoricalSensorData() {
             var match = re.exec(decodedData)
             if (match) {
               if (device['sensors'][sensorField] === undefined) {
-                console.log(deviceID + ": Creating list to store " + sensorField + " values");
+                console.log('Historical data: Creating list for ' + deviceID + ' to store ' + sensorField + ' values');
                 device['sensors'][sensorField] = {};
                 device['sensors'][sensorField]['id'] = sensorID;
                 device['sensors'][sensorField]['unit'] = sensorUnit;
@@ -48,7 +48,7 @@ function getHistoricalSensorData() {
 
           // Store metadata
           if (j === 0) {
-            console.log(deviceID + ": Creating metadata metrics");
+            console.log('Historical data: Creating metadata metrics for ' + deviceID);
             $.each(metaMap, function(l, metric) {
               device['meta'][metric] = {};
             })
@@ -87,7 +87,7 @@ function getHistoricalSensorData() {
         drawMetaChart(device);
       })
       .fail(function() {
-        console.log(deviceID + ": GET request failed!");
+        console.log('Historical data: GET request failed for ' + deviceID);
       })
       .always(function() {
         $('.loading-'+deviceID).remove();
