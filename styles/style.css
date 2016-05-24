@@ -65,13 +65,8 @@ a:hover { color: #1474A0; }
 }
 
 #map {
-  height: 600px;
-}
-@media (max-width: 768px) {
-  #map {
-    height: 400px;
-    max-height: 70vh;
-  }
+  height: 400px;
+  max-height: 70vh;
 }
 
 .leaflet-control-layers-toggle {

@@ -96,6 +96,7 @@ function getHistoricalSensorData() {
 }
 
 function drawGraph(device) {
+  $( '#graph-container' ).append( '<h2>' + device['name'] + ' (' + device['id'] + ') data</h2>' );
   $.each(device['sensors'], function(key, sensor) {
     if ($.isEmptyObject(sensor['data'])) {
       console.log(deviceID + ": Data set for "+key+" is empty, don't make graph");
@@ -111,7 +112,7 @@ function drawGraph(device) {
       .attr('id', graphID);
     
     // Add the elements to the graph container
-    $( '#graph-container' ).append( $('<div class="graph-wrapper"></div>').append( $graphDOMElement ) );
+    $( '#graph-container' ).append( $('<div class="graph-wrapper"></div>').append($graphDOMElement) );
     
     // Create a Dygraph
     var graph = new Dygraph($graphDOMElement.get(0), sensor['data'],
@@ -141,8 +142,8 @@ function drawGraph(device) {
 function drawMetaChart(device) {
   var data;
 
-  $container = $( '#meta-chart-container' );
-  $container.append('<div><h2>Meta data for ' + device['id'] +' (' + device['name'] + ')</h2></div>');
+  var $container = $( '#meta-chart-container' );
+  $container.append('<h2>' + device['name'] + ' (' + device['id'] +') meta data</h2>');
 
   $.each(device['meta'], function(metric, values) {
     var chartID = 'chart-' + device['id'] + '-' + metric;
@@ -153,8 +154,8 @@ function drawMetaChart(device) {
       .attr('id', chartID);
     
     // Add the element to the chart container
-    $innerContainer = $('<div class="meta-chart-wrapper"></div>');
-    $innerContainer.append('<h3>'+metric+'</h3>')
+    var $innerContainer = $('<div class="meta-chart-wrapper"></div>');
+    $innerContainer.append('<h3>' + metric + '</h3>')
     $container.append( $innerContainer.append( $chartDOMElement ) );
 
     data = {
@@ -163,9 +164,9 @@ function drawMetaChart(device) {
         {
           label: metric,
           fillColor: device['color'],
-          strokeColor: "rgba(0, 0, 0, 0.2)",
+          strokeColor: 'rgba(0, 0, 0, 0.2)',
           highlightFill: device['hightlightColor'],
-          highlightStroke: "rgba(0, 0, 0, 0.1)",
+          highlightStroke: 'rgba(0, 0, 0, 0.1)',
           data: []
         }
       ]
@@ -177,7 +178,7 @@ function drawMetaChart(device) {
 
     data['labels'].sort(sortNumber);
 
-    var ctx = $('#'+chartID).get(0).getContext("2d");
+    var ctx = $('#' + chartID).get(0).getContext('2d');
     var options = {
       barStrokeWidth : 1
     }
