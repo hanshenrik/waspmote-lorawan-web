@@ -136,6 +136,9 @@ function drawGraph(device) {
 
     // Keep track of graphs so we can update them at a later point
     graphs[graphID] = graph;
+
+    // Subscribe to new messages from the MQTT client
+    client.subscribe('nodes/' + device['id'] + '/packets');
   })
 }
 

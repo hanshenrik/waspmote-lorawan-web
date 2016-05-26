@@ -23,7 +23,7 @@ function getLatestSensorData() {
           <h3>Sensor ' + deviceID + '</h3>\
           <b>Last seen</b>: ' + date.toLocaleString('nn') + '<br />';
 
-        $.each( sensorMap, function(k, sensor) {
+        $.each( sensorMap, function(j, sensor) {
           var sensorField = sensor['name'];
           var sensorID = sensor['id']; // ID used in frame
           var sensorUnit = sensor['unit'];
