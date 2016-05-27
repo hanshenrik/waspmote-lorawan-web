@@ -1,5 +1,3 @@
-var latestDataURL = "https://thethingsnetwork.org/api/v0/nodes/";
-
 function getLatestSensorData() {
   $.each( devices, function(i, device) {
     var deviceID = device['id'];

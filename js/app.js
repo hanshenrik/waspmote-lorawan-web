@@ -64,6 +64,7 @@ var sensorMap = [
 var metaMap = ['rssi', 'dataRate', 'snr', 'frequency'];
 
 var historicalDataURL = "http://129.241.209.185:1880/api/";
+var latestDataURL = "https://thethingsnetwork.org/api/v0/nodes/";
 var graphs = {};
 var updateInterval = 30000;
 
