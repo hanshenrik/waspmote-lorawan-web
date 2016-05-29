@@ -1,20 +1,30 @@
-// Create a client instance (client id must be unique, so make some random number)
-var client = new Paho.MQTT.Client("ha-23.eradus.eu", 80, "/croft", "clientid_" + parseInt(Math.random() * 1000, 10));
+var mqttClient;
+var mqttURL = 'ha-23.eradus.eu';
+var mqttPath = '/croft';
+var mqttPort = 80;
+var mqttClientID = 'clientid_' + parseInt(Math.random() * 1000, 10);
+var mqttUsername = 'username';
+var mqttPassword = 'password';
 
-// Set callback handlers
-client.onConnectionLost = onConnectionLost;
-client.onMessageArrived = onMessageArrived;
+function initMQTT() {
+  // Create a client instance (client id must be unique, so make some random number)
+  mqttClient = new Paho.MQTT.Client(mqttURL, mqttPort, mqttPath, mqttClientID);
 
-// Connect the client
-client.connect({
-  onSuccess: onConnect,
-  userName: "username",
-  password: "password"
-});
+  // Set callback handlers
+  mqttClient.onConnectionLost = onConnectionLost;
+  mqttClient.onMessageArrived = onMessageArrived;
+
+  // Connect the client
+  mqttClient.connect({
+    onSuccess: onConnect,
+    userName: mqttUsername,
+    password: mqttPassword
+  });
+}
 
 // Called when the client connects
 function onConnect() {
-  console.log("onConnect");
+  console.log('onConnect');
 
   // Subscription to topics is done after graph is drawn in drawGraph() in historical-data.js
 }
@@ -22,7 +32,7 @@ function onConnect() {
 // Called when the client loses its connection
 function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
-    console.log("onConnectionLost: " + responseObject.errorMessage);
+    console.log('onConnectionLost: ' + responseObject.errorMessage);
   }
 }
 

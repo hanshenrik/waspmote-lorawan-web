@@ -60,17 +60,20 @@ var sensorMap = [
   },
 ];
 
+// Keep graphs in an object so we can update the data
+var graphs = {};
+
 // List of metadata we are interested in
 var metaMap = ['rssi', 'dataRate', 'snr', 'frequency'];
 
+// External website URLs
 var historicalDataURL = "http://129.241.209.185:1880/api/";
 var latestDataURL = "https://thethingsnetwork.org/api/v0/nodes/";
-var graphs = {};
-var updateInterval = 30000;
 
 $(document).ready(function () {
   drawMap();
   getLatestSensorData();
   Chart.defaults.global.responsive = true;
   getHistoricalSensorData();
+  initMQTT();
 });

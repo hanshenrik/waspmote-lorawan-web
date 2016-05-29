@@ -1,3 +1,4 @@
+/* General styling */
 body {
   margin: 0;
   font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
@@ -69,6 +70,14 @@ a:hover { color: #1474A0; }
   max-height: 70vh;
 }
 
+#graph-cover { background-image: url(../images/measure.jpg); }
+#meta-cover { background-image: url(../images/meta.jpg); }
+#map-cover { background-image: url(../images/map.png); }
+
+#graph-container,
+#meta-chart-container { text-align: center; }
+
+/* Leaflet map styling */
 .leaflet-control-layers-toggle {
   width: 26px;
   height: 26px;
@@ -78,24 +87,17 @@ a:hover { color: #1474A0; }
   height: 30px;
   background-size: 20px 20px;
 }
-.leaflet-retina .leaflet-control-layers-toggle {
-  background-size: 18px 18px;
-}
+.leaflet-retina .leaflet-control-layers-toggle { background-size: 18px 18px; }
 
-#graph-cover { background-image: url(../images/measure.jpg); }
-#meta-cover { background-image: url(../images/meta.jpg); }
-#map-cover { background-image: url(../images/map.png); }
 
-#graph-container,
-#meta-chart-container { text-align: center; }
-
-.graph-wrapper,
-.meta-chart-wrapper { padding: 20px 0; }
-
+/* Graph related styling */
 .graph {
   width: 100% !important;
   height: 300px;
 }
+
+.graph-wrapper,
+.meta-chart-wrapper { padding: 20px 0; }
 
 .loading-placeholder { font-size: 4em; }
 
