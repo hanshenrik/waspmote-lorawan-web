@@ -1,3 +1,4 @@
+// WebSockets variables
 var mqttClient;
 var mqttURL = 'ha-23.eradus.eu';
 var mqttPath = '/croft';
@@ -59,6 +60,7 @@ function onMessageArrived(message) {
       sensor['data'].push([date, value])
     }
 
+    // Update the corresponding graph
     graphs[graphID].updateOptions( { 'file' : sensor['data'] } );
   })
 }
