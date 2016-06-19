@@ -25,6 +25,11 @@ function getHistoricalSensorData() {
           var encodedData = frame['data'] // Data is base64 encoded
           var decodedData = atob(encodedData); // atob() is a built in Base64 decoding function
 
+          // CTT began sending on the same node address, filter out their data...
+          if (decodedData.includes('NTNU_CTT_22')) {
+            return true;
+          }
+
           $.each( sensorMap, function(k, sensor) {
             var sensorField = sensor['name'].toLowerCase();
             var sensorID = sensor['id']; // ID used in frame

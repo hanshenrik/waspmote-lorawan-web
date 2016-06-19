@@ -49,6 +49,11 @@ function onMessageArrived(message) {
   var encodedData = payloadObject['data']; // Data is base64 encoded
   var decodedData = atob(encodedData); // atob() is a built in Base64 decoding function
 
+  // CTT began sending on the same node address, filter out their data...
+  if (decodedData.includes('NTNU_CTT_22')) {
+    return;
+  }
+
   $.each( device['sensors'], function(i, sensor) {
     var sensorID = sensor['id']; // ID used in frame
     var graphID = sensor['graphID'];
