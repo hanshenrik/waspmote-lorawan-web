@@ -3,7 +3,7 @@ function getLatestSensorData() {
     var deviceID = device['id'];
 
     console.log('Latest data: GET request sent for ' + deviceID);
-    $.get( latestDataURL + deviceID + "/?limit=1")
+    $.get(historicalDataURL + deviceID + "/latest")
       .done(function( result ) {
         console.log('Latest data: Reponse received for ' + deviceID);
 
@@ -30,7 +30,7 @@ function getLatestSensorData() {
           var match = re.exec(decodedData);
           if (match) {
             var value = parseFloat(match[1], 10);
-            popupText += '<b>' + sensorField + '</b>: ' + value + '<br />';
+            popupText += '<b>' + sensorField + '</b>: ' + value + ' ' + sensorUnit + '<br />';
 
             // Set the color of the circle based on CO2 level
             if (sensorField === 'CO2') {
