@@ -133,7 +133,8 @@ function drawGraph(device) {
         // includeZero: true,
         // stepPlot: true,
         // drawGapEdgePoints: true,
-        // showRoller: true,
+        rollPeriod: 30,
+        showRoller: true,
         // valueRange: [0, 420],
         labels: ['Time', 'Node ' + device['id']],
         ylabel: key + ' (' + sensor['unit'] + ')'
